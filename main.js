@@ -45,6 +45,12 @@ const addStar = () => {
   scene.add(star)
 }
 
+const boxGeometry = new THREE.BoxGeometry(5, 5, 5)
+const boxMaterial = new THREE.MeshStandardMaterial({color: 'blue'})
+const box = new THREE.Mesh(boxGeometry, boxMaterial)
+
+scene.add(box)
+
 Array(200).fill().forEach(addStar)
 
 const animate = () => {
@@ -53,6 +59,9 @@ const animate = () => {
   // torus.rotation.x += 0.01
   // torus.rotation.y += 0.01
   // torus.rotation.z += 0.01
+  box.rotation.x += 0.01
+  box.rotation.y += 0.01
+  box.rotation.z += 0.01
 
   controls.update()
 
